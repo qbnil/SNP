@@ -7,7 +7,7 @@ def is_palindrome(txt) -> str:
     else:
         return False
 
-print(is_palindrome("A man, a plan, a canal -- Panama"))
+# print(is_palindrome("A man, a plan, a canal -- Panama"))
 # print(is_palindrome("Madam, I'm Adam!"))
 # print(is_palindrome("Abracadabra"))
 # print(is_palindrome(None))
