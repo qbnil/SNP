@@ -15,7 +15,6 @@ def count_words(string):
         counter_for_each_word.append(string.count(i))
     return dict(zip(set_string, counter_for_each_word))
          
-        
 
        
 # print(count_words("A man, a plan, a canal -- Panama"), # => {"a": 3, "man": 1,

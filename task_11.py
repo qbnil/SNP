@@ -11,7 +11,7 @@ class Dessert:
         self.__name = name
 
     def is_healthy(self):
-        return True if self.__calories is not None and self.__calories<200 else False
+        return True if self.__calories is not None and self.__calories<200 else False if self.__calories is not None else Exception("Attribute must be initialized before calling this method")
 
     def is_delicious(self):
         return True
@@ -23,14 +23,23 @@ class Dessert:
             raise Exception("You didn't initialize the calories for the dessert object")
     
     def get_name(self):
-        return self.__name 
-
+        if self.__name is not None:
+            return self.__name 
+        else:
+            raise Exception("Attribute must be initialized before calling this method")
 
     def set_calories(self, calories):
-        self.__calories = calories
+        if self.__calories is not None:
+            self.__calories = calories
+        else:
+            raise Exception("Attribute must be initialized before calling this method")
 
     def set_name(self, name):
-        self.__name = name
+        if self.__name is not None:
+            self.__name = name
+        else:
+            raise Exception("Attribute must be initialized before calling this method")
+    
 
 
 
