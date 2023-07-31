@@ -11,15 +11,21 @@ def rps_game_winner(*args):
         'SP': ['player1', 'S'],
         'SR': ['player2', 'R'],       
     }
-    if len(args[0])>2:
-        raise Exception("WrongNumberOfPlayersError")
+    class WrongNumberOfPlayersError(Exception):
+        def __init__(self, message):
+            super().__init__(message)
+
+    if len(args[0])!=2:
+        raise WrongNumberOfPlayersError("Wrong number of players")
+
     if args[0][0][1].upper() not in 'RPS' or args[0][1][1].upper() not in 'RPS':
         raise Exception("NoSuchStrategyError")
+
     combination = str(args[0][0][1]) + str(args[0][1][1])
 
     return f'{win_str[combination][0]} {win_str[combination][1]}'
 
-# print(rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']]), # => WrongNumberOfPlayersError
-# rps_game_winner([['player1', 'P'], ['player2', 'A']]), #=> NoSuchStrategyError
-# print(rps_game_winner([['player1', 'P'], ['player2', 'S']])) #=> 'player2 S'
-# # rps_game_winner([['player1', 'P'], ['player2', 'P']])) #=> 'player1 P')
+print(rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])), # => WrongNumberOfPlayersError
+print(rps_game_winner([['player1', 'P'], ['player2', 'A']])), #=> NoSuchStrategyError
+print(rps_game_winner([['player1', 'P'], ['player2', 'S']])) #=> 'player2 S'
+print(rps_game_winner([['player1', 'P'], ['player2', 'P']])) #=> 'player1 P')
