@@ -12,10 +12,7 @@ class JellyBean(Dessert):
         else:
             raise Exception("Can't get a value which is not initialized")
     def set_flavor(self, flavor):
-        if self.__flavor is not None:
-            self.__flavor = flavor
-        else:
-            raise Exception("Calling a method on a non-existing attribute of a class, initialize it")
+        self.__flavor = flavor
     # overriding the is_delicious method from task_11.py file
     def is_delicious(self):
         if self.__flavor is not None:
@@ -31,3 +28,5 @@ class JellyBean(Dessert):
 # print(JellyBean1.get_calories())
 # print(JellyBean1.get_name())
 # print(JellyBean1.is_delicious())
+# JellyBean1.set_flavor("caramel")
+# print(JellyBean1.get_flavor())

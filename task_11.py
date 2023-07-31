@@ -39,4 +39,4 @@ class Dessert:
 
 dessert1  = Dessert("чизкейк")
 dessert1.set_calories(125)
-print(dessert1.get_calories())
+# print(dessert1.get_calories())
