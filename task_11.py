@@ -29,20 +29,14 @@ class Dessert:
             raise Exception("Attribute must be initialized before calling this method")
 
     def set_calories(self, calories):
-        if self.__calories is not None:
-            self.__calories = calories
-        else:
-            raise Exception("Attribute must be initialized before calling this method")
+        self.__calories = calories
 
     def set_name(self, name):
-        if self.__name is not None:
-            self.__name = name
-        else:
-            raise Exception("Attribute must be initialized before calling this method")
+        self.__name = name
     
 
 
 
-dessert1  = Dessert("чизкейк", 350)
+dessert1  = Dessert("чизкейк")
 dessert1.set_calories(125)
 print(dessert1.get_calories())
