@@ -12,7 +12,7 @@ def rps_game_winner(*args):
         'SR': ['player2', 'R'],       
     }
     if len(args[0])>2:
-        raise Exception("WrongNumberOfPlayerError")
+        raise Exception("WrongNumberOfPlayersError")
     if args[0][0][1].upper() not in 'RPS' or args[0][1][1].upper() not in 'RPS':
         raise Exception("NoSuchStrategyError")
     combination = str(args[0][0][1]) + str(args[0][1][1])
