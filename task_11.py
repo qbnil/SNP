@@ -6,7 +6,7 @@
 """
 
 class Dessert:
-    def __init__(self, name, calories=None):
+    def __init__(self, name=None, calories=None):
         self.__calories = calories
         self.__name = name
 
