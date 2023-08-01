@@ -16,27 +16,30 @@ class Dessert:
     def is_delicious(self):
         return True
 
-    def get_calories(self):
+    @property
+    def calories(self):
         if self.__calories is not None:
             return self.__calories
         else:
             raise Exception("You didn't initialize the calories for the dessert object")
-    
-    def get_name(self):
+    @property 
+    def name(self):
         if self.__name is not None:
             return self.__name 
         else:
             raise Exception("Attribute must be initialized before calling this method")
 
-    def set_calories(self, calories):
+    @calories.setter
+    def calories(self, calories):
         self.__calories = calories
-
-    def set_name(self, name):
+    
+    @name.setter
+    def name(self, name):
         self.__name = name
     
 
 
 
-dessert1  = Dessert("чизкейк")
-dessert1.set_calories(125)
-# print(dessert1.get_calories())
+dessert1  = Dessert("чизкейк", 234)
+dessert1.calories = 123
+print(dessert1.calories)

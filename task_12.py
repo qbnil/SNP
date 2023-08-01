@@ -5,12 +5,14 @@ class JellyBean(Dessert):
         super().__init__(name, calories)
         self.__flavor = flavor
 
-        
-    def get_flavor(self):
+    @property    
+    def flavor(self):
         if self.__flavor is not None:
             return self.__flavor
         else:
             raise Exception("Can't get a value which is not initialized")
+
+    @flavor.setter
     def set_flavor(self, flavor):
         self.__flavor = flavor
     # overriding the is_delicious method from task_11.py file
