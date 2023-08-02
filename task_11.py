@@ -31,7 +31,10 @@ class Dessert:
 
     @calories.setter
     def calories(self, calories):
-        self.__calories = calories
+        if type(calories) is int:
+            self.__calories = calories
+        else:
+            raise Exception("Calories number has to be an integer type")
     
     @name.setter
     def name(self, name):
